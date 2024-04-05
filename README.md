@@ -24,8 +24,6 @@ Repositori ini merupakan skenario test dan juga pengujian yang dilakukan pada ap
 2. Pembatalan order dengan order id nya tidak ada di database
 ### Melihat Order
 1. Melihat order approved
-2. Melihat order cancelled
-3. Melihat order revised
 4. Melihat order yang id nya tidak ada di database
 
 ## Pengujian 
