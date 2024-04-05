@@ -39,7 +39,8 @@ Berikut adalah test nya:
 | **Expected Result** | Data order tersimpan dalam database.<br>Result: <br>{ "orderId": 1 } |
 | **Actual Result** | Data order tersimpan dalam database.<br>Result: <br>{ "orderId": 1 } |
 | **Test Result** | PASS |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/63079505-bd07-43b4-aa47-295d8fa2ff18) |
+| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/63079505-bd07-43b4-aa47-295d8fa2ff18) |  
+
 **Test Data**  
 ```json
 {
@@ -72,7 +73,8 @@ Berikut adalah test nya:
 | **Expected Result** | Order tidak ter-create, menampilkan kode response 500 dengan message error “Consumer not found with id 0” |
 | **Actual Result** | Order ter-create, menampilkan kode response 200.<br>Result: <br>{ "orderId": 2 } |
 | **Test Result** | FAIL |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/ccfcc524-0a23-4536-a93d-35b6e7d96491) |
+| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/ccfcc524-0a23-4536-a93d-35b6e7d96491) |  
+
 **Test Data**  
 ```json
 {
