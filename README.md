@@ -22,49 +22,45 @@ Repositori ini merupakan skenario test dan juga pengujian yang dilakukan pada ap
 ### Pembatalan Order
 1. Pembatalan order dengan order id nya ada di database
 2. Pembatalan order dengan order id nya tidak ada di database
+### Melihat Order
+1. Melihat order approved
+2. Melihat order cancelled
+3. Melihat order revised
+4. Melihat order yang id nya tidak ada di database
 
 ## Pengujian 
 ### Penambahan Order
-1. Data order dengan consumer id dan restaurant id nya ada pada database
-   - Create consumer: POST /consumers  
-   Data Consumer:
-   ```
-   {
-      "name":
-     {
-      "firstName": "Asep",
-      "lastName": "Putra"
-     }
-   }
-   ```
-   - Create Order : POST /orders  
-   Data Restoran:
-   ```
-   {
-      "address": {
-        "city": "Cimahi",
-        "state": "Indonesia",
-        "street1": "Jl. Maharmatatilaar",
-        "street2": "Jl. Maha",
-        "zip": "40156"
-     },
-     "menu": {
-        "menuItems": [
-        {
-           "id": "1",
-           "name": "Nasi Goreng Seafood",
-           "price": "35.00"
-         },
-         {
-           "id": "2",
-           "name": "Bubur Ayam Special",
-           "price": "22.00"
-         }
-       ]
-     },
-     "name": "DKResto"
-   }
-   ```
-
-
-   
+1. Penambahan data order dengan consumer id dan restaurant id nya ada pada database
+| Scenario      | Penambahan data order dengan consumer id dan restaurant id nya ada pada database |
+| :----------- | :------------|
+| **Preconditions** | Data restoran dan consumer yang akan digunakan sudah terdaftar. | 
+| **Step To Execute**     | 1. Mengakses Swagger UI pada localhost:8082/orders/index.html  
+2. Klik order-controller  
+3. Klik POST /orders  
+4. Klik Try it Out.  
+5. Masukkan test data pada request body  
+6. Klik Execute  
+|
+| **Test Data**| ```
+{
+  "consumerId": 1,
+  "deliveryAddress": {
+    "city": "Cimahi",
+    "state": "Indonesia",
+    "street1": "Jl Sangkuriang Barat 2",
+    "street2": "string",
+    "zip": "40511"
+  },
+  "deliveryTime": "2024-04-05T07:31:02.414Z",
+  "lineItems": [
+    {
+      "menuItemId": "2",
+      "quantity": 2
+    }
+  ],
+  "restaurantId": 1
+}
+```|
+| **Expected Result**| Pass |
+| **Actual Result**| Pass |
+| **Test Result**| PASS|
