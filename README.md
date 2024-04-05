@@ -31,13 +31,16 @@ Repositori ini merupakan skenario test dan juga pengujian yang dilakukan pada ap
 ## Pengujian 
 ### Penambahan Order
 1. Penambahan data order dengan consumer id dan restaurant id nya ada pada database.
+Berikut adalah test nya:
 
-Berikut adalah struktur tabel untuk referensi lebih lanjut:
-
-| Header 1     | Header 2     | Header 3     |
-|:-------------|:------------:|-------------:|
-| Align kiri   | Align tengah |   Align kanan|
-| teks         | teks         |         teks |
+| Scenario      | Penambahan data order dengan consumer id dan restaurant id nya ada pada database |
+|:--------------|:---------------------------------------------------------------------------------|
+| **Preconditions** | Data restoran dan consumer yang akan digunakan sudah terdaftar.                   | 
+| **Steps To Execute**| 1. Mengakses Swagger UI pada localhost:8082/orders/index.html<br>2. Klik order-controller<br>3. Klik POST /orders<br>4. Klik Try it Out<br>5. Masukkan test data pada request body (lihat bagian Test Data di bawah)<br>6. Klik Execute |
+| **Test Data**| Lihat contoh JSON di bawah. |
+| **Expected Result**| Pass |
+| **Actual Result**| Pass |
+| **Test Result**| PASS |
 
 **Test Data**  
 ```json
