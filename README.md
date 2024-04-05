@@ -256,3 +256,113 @@ orderId = 1
   ]
 }
 ```
+
+### 8. Merubah data menu order yang menu id nya tidak ada pada database 
+Berikut adalah test nya:
+
+| Scenario      | Merubah data menu order yang menu id nya tidak ada pada database |
+|:--------------|:---------------------------------------------------------------------------------|
+| **Preconditions** | Data order yang akan digunakan sudah terdaftar. | 
+| **Steps To Execute** | 1. Mengakses Swagger UI pada localhost:8082/orders/index.html<br>2. Klik order-controller<br>3. Klik POST /order/{orderId}/revise<br>4. Klik Try it Out<br>5. Masukkan test data pada request body (lihat bagian Test Data di bawah)<br>6. Klik Execute |
+| **Expected Result** | Order tidak berhasil dirubah, menampilkan kode response 500 dengan message error “Menu not found with id 4” |
+| **Actual Result** | {<br>  "orderId": 1,<br>  "state": "APPROVED",<br>  "orderTotal": "44.00"<br>} |
+| **Test Result** | FAIL |
+| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/9dfb9132-f628-473e-8961-0063678f40cf) |  
+
+**Test Data**  
+orderId = 1   
+```json
+{
+  "revisedOrderLineItems": [
+    {
+      "menuItemId": "4",
+      "quantity": 3
+    }
+  ]
+}
+```
+
+### 9. Merubah data order dengan id ordernya tidak ada pada database 
+Berikut adalah test nya:
+
+| Scenario      | Merubah data order dengan id ordernya tidak ada pada database |
+|:--------------|:---------------------------------------------------------------------------------|
+| **Preconditions** | - | 
+| **Steps To Execute** | 1. Mengakses Swagger UI pada localhost:8082/orders/index.html<br>2. Klik order-controller<br>3. Klik POST /order/{orderId}/revise<br>4. Klik Try it Out<br>5. Masukkan test data pada request body (lihat bagian Test Data di bawah)<br>6. Klik Execute |
+| **Expected Result** | Menampilkan kode response 404 |
+| **Actual Result** | Menampilkan kode response 404 |
+| **Test Result** | PASS |
+| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/d1ba3a6d-4e2b-4f3f-923c-4d0fb4d6eca7) |  
+
+**Test Data**  
+orderId = 10
+```json
+{
+  "revisedOrderLineItems": [
+    {
+      "menuItemId": "4",
+      "quantity": 3
+    }
+  ]
+}
+```
+
+### 10. Pembatalan order dengan order id nya ada di database  
+Berikut adalah test nya:
+
+| Scenario      | Pembatalan order dengan order id nya ada di database  |
+|:--------------|:---------------------------------------------------------------------------------|
+| **Preconditions** | Data order yang akan digunakan sudah terdaftar. | 
+| **Steps To Execute** | 1. Mengakses Swagger UI pada localhost:8082/orders/index.html<br>2. Klik order-controller<br>3. Klik POST /order/{orderId}/cancel<br>4. Klik Try it Out<br>5. Masukkan test data pada request body (lihat bagian Test Data di bawah)<br>6. Klik Execute |
+| **Expected Result** | {<br>  "orderId": 5,<br>  "state": "CANCELLED",<br>  "orderTotal": "105.00"<br>} |
+| **Actual Result** | {<br>  "orderId": 5,<br>  "state": "APPROVED",<br>  "orderTotal": "105.00"<br>} |
+| **Test Result** | FAIL |
+| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/b0eb4ea6-bbc8-4488-a598-b46b81f7099e) |  
+
+**Test Data**  
+orderId = 5
+
+### 11. Pembatalan order dengan order id nya tidak ada di database  
+Berikut adalah test nya:
+
+| Scenario      | Pembatalan order dengan order id nya tidak ada di database |
+|:--------------|:---------------------------------------------------------------------------------|
+| **Preconditions** | Data order yang akan digunakan sudah terdaftar. | 
+| **Steps To Execute** | 1. Mengakses Swagger UI pada localhost:8082/orders/index.html<br>2. Klik order-controller<br>3. Klik POST /order/{orderId}/cancel<br>4. Klik Try it Out<br>5. Masukkan test data pada request body (lihat bagian Test Data di bawah)<br>6. Klik Execute |
+| **Expected Result** | Menampilkan kode response 404 |
+| **Actual Result** | Menampilkan kode response 404 |
+| **Test Result** | PASS |
+| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/8a47c859-c4b4-4531-bdd1-97c41faf2fb1) |  
+
+**Test Data**  
+orderId = 9
+
+### 12. Melihat order approved   
+Berikut adalah test nya:
+
+| Scenario      | Melihat order approved |
+|:--------------|:---------------------------------------------------------------------------------|
+| **Preconditions** | Data order yang akan digunakan sudah terdaftar. | 
+| **Steps To Execute** | 1. Mengakses Swagger UI pada localhost:8082/orders/index.html<br>2. Klik order-controller<br>3. Klik GET /orders/{orderId}<br>4. Klik Try it Out<br>5. Klik Execute |
+| **Expected Result** | {<br>  "orderId": 1,<br>  "state": "APPROVED",<br>  "orderTotal": "44.00"<br>} |
+| **Actual Result** | {<br>  "orderId": 1,<br>  "state": "APPROVED",<br>  "orderTotal": "44.00"<br>} |
+| **Test Result** | PASS |
+| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/3f466469-0186-4b72-b3f0-a143f7d8232e) |  
+
+**Test Data**  
+orderId = 1
+
+### 13. Melihat order yang id nya tidak ada di database
+Berikut adalah test nya:
+
+| Scenario      | Melihat order approved |
+|:--------------|:---------------------------------------------------------------------------------|
+| **Preconditions** | Data order yang akan digunakan sudah terdaftar. | 
+| **Steps To Execute** | 1. Mengakses Swagger UI pada localhost:8082/orders/index.html<br>2. Klik order-controller<br>3. Klik GET /orders/{orderId}<br>4. Klik Try it Out<br>5. Klik Execute |
+| **Expected Result** | Menampilkan kode response 404 |
+| **Actual Result** | Menampilkan kode response 404 |
+| **Test Result** | PASS |
+| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/87d931fd-d3e7-4c9b-872e-aacb60d2bfbc) |  
+
+**Test Data**  
+orderId = 20
