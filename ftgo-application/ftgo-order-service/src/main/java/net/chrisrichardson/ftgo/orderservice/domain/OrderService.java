@@ -46,14 +46,14 @@ public class OrderService {
   private Optional<MeterRegistry> meterRegistry;
 
   public OrderService(SagaInstanceFactory sagaInstanceFactory,
-                      OrderRepository orderRepository,
-                      DomainEventPublisher eventPublisher,
-                      RestaurantRepository restaurantRepository,
-                      CreateOrderSaga createOrderSaga,
-                      CancelOrderSaga cancelOrderSaga,
-                      ReviseOrderSaga reviseOrderSaga,
-                      OrderDomainEventPublisher orderAggregateEventPublisher,
-                      Optional<MeterRegistry> meterRegistry) {
+      OrderRepository orderRepository,
+      DomainEventPublisher eventPublisher,
+      RestaurantRepository restaurantRepository,
+      CreateOrderSaga createOrderSaga,
+      CancelOrderSaga cancelOrderSaga,
+      ReviseOrderSaga reviseOrderSaga,
+      OrderDomainEventPublisher orderAggregateEventPublisher,
+      Optional<MeterRegistry> meterRegistry) {
 
     this.sagaInstanceFactory = sagaInstanceFactory;
     this.orderRepository = orderRepository;
@@ -67,14 +67,19 @@ public class OrderService {
 
   @Transactional
   public Order createOrder(long consumerId, long restaurantId, DeliveryInformation deliveryInformation,
-                           List<MenuItemIdAndQuantity> lineItems) {
+      List<MenuItemIdAndQuantity> lineItems) {
+    for (MenuItemIdAndQuantity item : lineItems) {
+      if (item.getQuantity() <= 0) {
+        throw new InvalidQuantityException(item.getMenuItemId());
+      }
+    }
     Restaurant restaurant = restaurantRepository.findById(restaurantId)
-            .orElseThrow(() -> new RestaurantNotFoundException(restaurantId));
+        .orElseThrow(() -> new RestaurantNotFoundException(restaurantId));
 
     List<OrderLineItem> orderLineItems = makeOrderLineItems(lineItems, restaurant);
 
-    ResultWithDomainEvents<Order, OrderDomainEvent> orderAndEvents =
-            Order.createOrder(consumerId, restaurant, deliveryInformation, orderLineItems);
+    ResultWithDomainEvents<Order, OrderDomainEvent> orderAndEvents = Order.createOrder(consumerId, restaurant,
+        deliveryInformation, orderLineItems);
 
     Order order = orderAndEvents.result;
     orderRepository.save(order);
@@ -91,14 +96,13 @@ public class OrderService {
     return order;
   }
 
-
   private List<OrderLineItem> makeOrderLineItems(List<MenuItemIdAndQuantity> lineItems, Restaurant restaurant) {
     return lineItems.stream().map(li -> {
-      MenuItem om = restaurant.findMenuItem(li.getMenuItemId()).orElseThrow(() -> new InvalidMenuItemIdException(li.getMenuItemId()));
+      MenuItem om = restaurant.findMenuItem(li.getMenuItemId())
+          .orElseThrow(() -> new InvalidMenuItemIdException(li.getMenuItemId()));
       return new OrderLineItem(li.getMenuItemId(), om.getName(), om.getPrice(), li.getQuantity());
     }).collect(toList());
   }
-
 
   public Optional<Order> confirmChangeLineItemQuantity(Long orderId, OrderRevision orderRevision) {
     return orderRepository.findById(orderId).map(order -> {
@@ -115,7 +119,7 @@ public class OrderService {
   @Transactional
   public Order cancel(Long orderId) {
     Order order = orderRepository.findById(orderId)
-            .orElseThrow(() -> new OrderNotFoundException(orderId));
+        .orElseThrow(() -> new OrderNotFoundException(orderId));
     CancelOrderSagaData sagaData = new CancelOrderSagaData(order.getConsumerId(), orderId, order.getOrderTotal());
     sagaInstanceFactory.create(cancelOrderSaga, sagaData);
     return order;
