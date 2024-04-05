@@ -37,7 +37,7 @@ Berikut adalah test nya:
 | **Expected Result** | Data order tersimpan dalam database.<br>Result: <br>{ "orderId": 1 } |
 | **Actual Result** | Data order tersimpan dalam database.<br>Result: <br>{ "orderId": 1 } |
 | **Test Result** | PASS |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/63079505-bd07-43b4-aa47-295d8fa2ff18) |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/63079505-bd07-43b4-aa47-295d8fa2ff18" width="100"> |  
 
 **Test Data**  
 ```json
