@@ -364,3 +364,28 @@ Berikut adalah test nya:
 
 **Test Data**  
 orderId = 20
+
+## Perubahan Kode
+### 1. Menambahkan handling ketika createOrder dengan quantity kosong atau 0.
+```java
+OrderService.java
+
+ @Transactional
+  public Order createOrder(long consumerId, long restaurantId, DeliveryInformation deliveryInformation,
+      List<MenuItemIdAndQuantity> lineItems) {
+    for (MenuItemIdAndQuantity item : lineItems) {
+      if (item.getQuantity() <= 0) {
+        throw new InvalidQuantityException(item.getMenuItemId());
+      }
+    }
+...
+```
+```java
+InvalidQuantityException.java
+
+public class InvalidQuantityException extends RuntimeException {
+    public InvalidQuantityException(String menuItemId) {
+        super("Invalid quantity for Menu Item " + menuItemId + ". Quantity cannot be zero.");
+    }
+}
+```
