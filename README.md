@@ -36,45 +36,30 @@ Berikut adalah test nya:
 | Scenario      | Penambahan data order dengan consumer id dan restaurant id nya ada pada database |
 |:--------------|:---------------------------------------------------------------------------------|
 | **Preconditions** | Data restoran dan consumer yang akan digunakan sudah terdaftar.                   | 
-| **Steps To Execute**| 1. Mengakses Swagger UI pada localhost:8082/orders/index.html<br>2. Klik order-controller<br>3. Klik POST /orders<br>4. Klik Try it Out<br>5. Masukkan test data pada request body (lihat bagian Test Data di bawah)<br>6. Klik Execute |
-| **Test Data**| Lihat contoh JSON di bawah. |
-| **Expected Result**| Pass |
-| **Actual Result**| Pass |
-| **Test Result**| PASS |
+| **Steps To Execute** | 1. Mengakses Swagger UI pada localhost:8082/orders/index.html<br>2. Klik order-controller<br>3. Klik POST /orders<br>4. Klik Try it Out<br>5. Masukkan test data pada request body (lihat bagian Test Data di bawah)<br>6. Klik Execute |
+| **Test Data** | Lihat contoh JSON di bawah. |
+| **Expected Result** | Data order tersimpan dalam database.<br>Result: <br>{ "orderId": 1 } |
+| **Actual Result** | Data order tersimpan dalam database.<br>Result: <br>{ "orderId": 1 } |
+| **Test Result** | PASS |
+| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/63079505-bd07-43b4-aa47-295d8fa2ff18) |
 
 **Test Data**  
 ```json
 {
-  "consumerId": 100,
+  "consumerId": 1,
   "deliveryAddress": {
-    "city": "bandung",
-    "state": "indonesia",
-    "street1": "ciwaruga",
-    "street2": "polban",
-    "zip": "12345"
+    "city": "Cimahi",
+    "state": "Indonesia",
+    "street1": "Jl Sangkuriang Barat 2",
+    "street2": "string",
+    "zip": "40511"
   },
-  "deliveryTime": "2024-04-05T07:59:41.408Z",
+  "deliveryTime": "2024-04-05T07:31:02.414Z",
   "lineItems": [
     {
-      "menuItemId": "001",
-      "quantity": "1"
-    },
-    {
-      "menuItemId": "002",
-      "quantity": "2"
-    },
-    {
-      "menuItemId": "003",
-      "quantity": "1"
-    },
-    {
-      "menuItemId": "004",
-      "quantity": "2"
-    },
-    {
-      "menuItemId": "005",
-      "quantity": "1"
+      "menuItemId": "2",
+      "quantity": 2
     }
   ],
-  "restaurantId": 3
+  "restaurantId": 1
 }
