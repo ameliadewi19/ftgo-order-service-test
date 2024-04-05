@@ -30,7 +30,7 @@ Repositori ini merupakan skenario test dan juga pengujian yang dilakukan pada ap
 
 ## Pengujian 
 ### Penambahan Order
-1. Penambahan data order dengan consumer id dan restaurant id nya ada pada database
+1. Penambahan data order dengan consumer id dan restaurant id nya ada pada database  
 | Scenario      | Test adding an order with invalid items (not existing in the database). |
 | :----------- | :------------|
 | **Preconditions** | 1. The FTGO application is deployed and running. | 
