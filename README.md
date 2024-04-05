@@ -26,7 +26,7 @@ Repositori ini merupakan skenario test dan juga pengujian yang dilakukan pada ap
 ## Pengujian 
 ### Penambahan Order
 1. Data order dengan consumer id dan restaurant id nya ada pada database
-   - Create consumer: POST /consumers \n
+   - Create consumer: POST /consumers  
    Data Consumer:
    ```
    {
@@ -37,7 +37,7 @@ Repositori ini merupakan skenario test dan juga pengujian yang dilakukan pada ap
      }
    }
    ```
-   - Create Order : POST /orders \n
+   - Create Order : POST /orders  
    Data Restoran:
    ```
    {
