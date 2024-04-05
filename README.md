@@ -31,20 +31,10 @@ Repositori ini merupakan skenario test dan juga pengujian yang dilakukan pada ap
 ## Pengujian 
 ### Penambahan Order
 1. Penambahan data order dengan consumer id dan restaurant id nya ada pada database  
-| Scenario      | Test adding an order with invalid items (not existing in the database). |
-| :----------- | :------------|
-| **Preconditions** | 1. The FTGO application is deployed and running. | 
-|              | 2. All microservices (consumer service, restaurant service, order service, kitchen service, accounting service, order history service, and API gateway) are operational.|
-|              | 3. Necessary data such as consumers and menu items are available in the system. |
-|              | 4. The restaurant ID used in this scenario exists in the database. |
-|              | 4. Once the request body JSON is filled, click on the "Execute" button to send the request to the server. |
-| **Step To Execute**     | 1. Open Swagger UI in localhost:8082/orders/index.html |
-|              | 2. Look for the section where the request body JSON input in POST /orders section, then click Try it Out. |
-|              | 3. Write the JSON in Test Data for creating an order. |
-|              | 4. Once you've filled in the request body JSON, click on the "Execute" button to send the request to the server. |
-| **Expected Result**| |
-| **Actual Result**| |
-| **Test Result**| PASS|
+| Header 1     | Header 2     | Header 3     |
+|:-------------|:------------:|-------------:|
+| Align kiri   | Align tengah |   Align kanan|
+| teks         | teks         |         teks |
 
 **Test Data**
 ```json
