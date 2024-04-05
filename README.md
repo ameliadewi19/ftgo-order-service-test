@@ -32,35 +32,10 @@ Repositori ini merupakan skenario test dan juga pengujian yang dilakukan pada ap
 ### Penambahan Order
 1. Penambahan data order dengan consumer id dan restaurant id nya ada pada database
 | Scenario      | Penambahan data order dengan consumer id dan restaurant id nya ada pada database |
-| :----------- | :------------|
-| **Preconditions** | Data restoran dan consumer yang akan digunakan sudah terdaftar. | 
-| **Step To Execute**     | 1. Mengakses Swagger UI pada localhost:8082/orders/index.html  
-2. Klik order-controller  
-3. Klik POST /orders  
-4. Klik Try it Out.  
-5. Masukkan test data pada request body  
-6. Klik Execute  
-|
-| **Test Data**| ```
-{
-  "consumerId": 1,
-  "deliveryAddress": {
-    "city": "Cimahi",
-    "state": "Indonesia",
-    "street1": "Jl Sangkuriang Barat 2",
-    "street2": "string",
-    "zip": "40511"
-  },
-  "deliveryTime": "2024-04-05T07:31:02.414Z",
-  "lineItems": [
-    {
-      "menuItemId": "2",
-      "quantity": 2
-    }
-  ],
-  "restaurantId": 1
-}
-```|
+|:--------------|:---------------------------------------------------------------------------------|
+| **Preconditions** | Data restoran dan consumer yang akan digunakan sudah terdaftar.                   | 
+| **Steps To Execute**| 1. Mengakses Swagger UI pada localhost:8082/orders/index.html<br>2. Klik order-controller<br>3. Klik POST /orders<br>4. Klik Try it Out<br>5. Masukkan test data pada request body<br>6. Klik Execute |
+| **Test Data**| ```json<br>{<br>  "consumerId": 1,<br>  "deliveryAddress": {<br>    "city": "Cimahi",<br>    "state": "Indonesia",<br>    "street1": "Jl Sangkuriang Barat 2",<br>    "street2": "string",<br>    "zip": "40511"<br>  },<br>  "deliveryTime": "2024-04-05T07:31:02.414Z",<br>  "lineItems": [<br>    {<br>      "menuItemId": "2",<br>      "quantity": 2<br>    }<br>  ],<br>  "restaurantId": 1<br>}<br>``` |
 | **Expected Result**| Pass |
 | **Actual Result**| Pass |
-| **Test Result**| PASS|
+| **Test Result**| PASS |
