@@ -30,13 +30,16 @@ Repositori ini merupakan skenario test dan juga pengujian yang dilakukan pada ap
 
 ## Pengujian 
 ### Penambahan Order
-1. Penambahan data order dengan consumer id dan restaurant id nya ada pada database  
+1. Penambahan data order dengan consumer id dan restaurant id nya ada pada database.
+
+Berikut adalah struktur tabel untuk referensi lebih lanjut:
+
 | Header 1     | Header 2     | Header 3     |
 |:-------------|:------------:|-------------:|
 | Align kiri   | Align tengah |   Align kanan|
 | teks         | teks         |         teks |
 
-**Test Data**
+**Test Data**  
 ```json
 {
   "consumerId": 100,
@@ -72,4 +75,3 @@ Repositori ini merupakan skenario test dan juga pengujian yang dilakukan pada ap
   ],
   "restaurantId": 3
 }
-``` 
