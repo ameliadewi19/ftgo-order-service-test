@@ -26,7 +26,7 @@ Repositori ini merupakan skenario test dan juga pengujian yang dilakukan pada ap
 ## Pengujian 
 ### Penambahan Order
 1. Data order dengan consumer id dan restaurant id nya ada pada database
-   Create consumer: POST /consumers
+   - Create consumer: POST /consumers \n
    Data Consumer:
    ```
    {
@@ -37,3 +37,34 @@ Repositori ini merupakan skenario test dan juga pengujian yang dilakukan pada ap
      }
    }
    ```
+   - Create Order : POST /orders \n
+   Data Restoran:
+   ```
+   {
+      "address": {
+        "city": "Cimahi",
+        "state": "Indonesia",
+        "street1": "Jl. Maharmatatilaar",
+        "street2": "Jl. Maha",
+        "zip": "40156"
+     },
+     "menu": {
+        "menuItems": [
+        {
+           "id": "1",
+           "name": "Nasi Goreng Seafood",
+           "price": "35.00"
+         },
+         {
+           "id": "2",
+           "name": "Bubur Ayam Special",
+           "price": "22.00"
+         }
+       ]
+     },
+     "name": "DKResto"
+   }
+   ```
+
+
+   
