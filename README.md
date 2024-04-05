@@ -37,7 +37,7 @@ Berikut adalah test nya:
 | **Expected Result** | Data order tersimpan dalam database.<br>Result: <br>{ "orderId": 1 } |
 | **Actual Result** | Data order tersimpan dalam database.<br>Result: <br>{ "orderId": 1 } |
 | **Test Result** | PASS |
-| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/63079505-bd07-43b4-aa47-295d8fa2ff18" width="300"> |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/63079505-bd07-43b4-aa47-295d8fa2ff18" width="200"> |  
 
 **Test Data**  
 ```json
@@ -71,7 +71,7 @@ Berikut adalah test nya:
 | **Expected Result** | Order tidak ter-create, menampilkan kode response 500 dengan message error “Consumer not found with id 0” |
 | **Actual Result** | Order ter-create, menampilkan kode response 200.<br>Result: <br>{ "orderId": 2 } |
 | **Test Result** | FAIL |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/ccfcc524-0a23-4536-a93d-35b6e7d96491) |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/ccfcc524-0a23-4536-a93d-35b6e7d96491" width="200"> |  
 
 **Test Data**  
 ```json
@@ -105,7 +105,7 @@ Berikut adalah test nya:
 | **Expected Result** | Order tidak ter-create, menampilkan kode response 500 dengan message error “Restaurant not found with id 0”. |
 | **Actual Result** | Order tidak ter-create, menampilkan kode response 500 dengan message error “Restaurant not found with id 0”. |
 | **Test Result** | PASS |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/b9a1602d-ce30-4f67-b83b-5297c3b7bc8c) |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/b9a1602d-ce30-4f67-b83b-5297c3b7bc8c" width="200"> |  
 
 **Test Data**  
 ```json
@@ -139,7 +139,7 @@ Berikut adalah test nya:
 | **Expected Result** | Order tidak ter-create, menampilkan kode response 500 dengan message error “Customer not found with id 0. Restaurant not found with id 0”. |
 | **Actual Result** | Order tidak ter-create, menampilkan kode response 500 dengan message error “Restaurant not found with id 0”.|
 | **Test Result** | FAIL |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/5ef8f8c1-1959-4067-b884-6a510a668394) |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/5ef8f8c1-1959-4067-b884-6a510a668394" width="200"> |  
 
 **Test Data**  
 ```json
@@ -173,7 +173,7 @@ Berikut adalah test nya:
 | **Expected Result** | Order tidak ter-create, menampilkan kode response 500 dengan message error “Quantity of menu must be more than 0” |
 | **Actual Result** | Order ter-create, menampilkan kode response 200.<br>Result: <br>{ "orderId": 4 } |
 | **Test Result** | FAIL |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/a1779b3d-3e39-466f-ab13-f7aa805292ab) |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/a1779b3d-3e39-466f-ab13-f7aa805292ab" width="200"> |  
 
 **Test Data**  
 ```json
@@ -206,7 +206,7 @@ Berikut adalah test nya:
 | **Expected Result** | Order tidak ter-create, menampilkan kode response 500 dengan message error “Address must be string” |
 | **Actual Result** | Order ter-create, menampilkan kode response 200.<br>Result: <br>{ "orderId": 5 } |
 | **Test Result** | FAIL |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/aacf3142-bca1-4655-b475-5d8b729b455f) |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/aacf3142-bca1-4655-b475-5d8b729b455f" width="200"> |  
 
 **Test Data**  
 ```json
@@ -240,7 +240,7 @@ Berikut adalah test nya:
 | **Expected Result** | {<br>  "orderId": 1,<br>  "state": "APPROVED",<br>  "orderTotal": "66.00"<br>} |
 | **Actual Result** | {<br>  "orderId": 1,<br>  "state": "APPROVED",<br>  "orderTotal": "44.00"<br>} |
 | **Test Result** | FAIL |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/27f6fcd5-c5ae-46c6-a4c7-b2fb824ef72f) |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/27f6fcd5-c5ae-46c6-a4c7-b2fb824ef72f" width="200"> |  
 
 **Test Data**  
 orderId = 1   
@@ -265,7 +265,7 @@ Berikut adalah test nya:
 | **Expected Result** | Order tidak berhasil dirubah, menampilkan kode response 500 dengan message error “Menu not found with id 4” |
 | **Actual Result** | {<br>  "orderId": 1,<br>  "state": "APPROVED",<br>  "orderTotal": "44.00"<br>} |
 | **Test Result** | FAIL |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/9dfb9132-f628-473e-8961-0063678f40cf) |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/9dfb9132-f628-473e-8961-0063678f40cf" width="200"> |  
 
 **Test Data**  
 orderId = 1   
@@ -290,7 +290,7 @@ Berikut adalah test nya:
 | **Expected Result** | Menampilkan kode response 404 |
 | **Actual Result** | Menampilkan kode response 404 |
 | **Test Result** | PASS |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/d1ba3a6d-4e2b-4f3f-923c-4d0fb4d6eca7) |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/d1ba3a6d-4e2b-4f3f-923c-4d0fb4d6eca7" width="200"> |  
 
 **Test Data**  
 orderId = 10
@@ -315,7 +315,7 @@ Berikut adalah test nya:
 | **Expected Result** | {<br>  "orderId": 5,<br>  "state": "CANCELLED",<br>  "orderTotal": "105.00"<br>} |
 | **Actual Result** | {<br>  "orderId": 5,<br>  "state": "APPROVED",<br>  "orderTotal": "105.00"<br>} |
 | **Test Result** | FAIL |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/b0eb4ea6-bbc8-4488-a598-b46b81f7099e) |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/b0eb4ea6-bbc8-4488-a598-b46b81f7099e" width="200"> |  
 
 **Test Data**  
 orderId = 5
@@ -330,7 +330,7 @@ Berikut adalah test nya:
 | **Expected Result** | Menampilkan kode response 404 |
 | **Actual Result** | Menampilkan kode response 404 |
 | **Test Result** | PASS |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/8a47c859-c4b4-4531-bdd1-97c41faf2fb1) |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/8a47c859-c4b4-4531-bdd1-97c41faf2fb1" width="200"> |  
 
 **Test Data**  
 orderId = 9
@@ -345,7 +345,7 @@ Berikut adalah test nya:
 | **Expected Result** | {<br>  "orderId": 1,<br>  "state": "APPROVED",<br>  "orderTotal": "44.00"<br>} |
 | **Actual Result** | {<br>  "orderId": 1,<br>  "state": "APPROVED",<br>  "orderTotal": "44.00"<br>} |
 | **Test Result** | PASS |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/3f466469-0186-4b72-b3f0-a143f7d8232e) |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/3f466469-0186-4b72-b3f0-a143f7d8232e" width="200"> |  
 
 **Test Data**  
 orderId = 1
@@ -360,7 +360,7 @@ Berikut adalah test nya:
 | **Expected Result** | Menampilkan kode response 404 |
 | **Actual Result** | Menampilkan kode response 404 |
 | **Test Result** | PASS |
-| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/87d931fd-d3e7-4c9b-872e-aacb60d2bfbc) |  
+| **Screenshot** | <img src="https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/87d931fd-d3e7-4c9b-872e-aacb60d2bfbc" width="200"> |  
 
 **Test Data**  
 orderId = 20
