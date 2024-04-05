@@ -185,6 +185,7 @@ Berikut adalah test nya:
     "city": "Cimahi",
     "state": "Indonesia",
     "street1": "Jl Sangkuriang Barat 2",
+    "street2": "string",
     "zip": "40511"
   },
   "deliveryTime": "2024-04-05T07:31:02.414Z",
@@ -228,5 +229,30 @@ Berikut adalah test nya:
     }
   ],
   "restaurantId": 1
+}
+```
+
+### 7. Merubah data menu order yang menu id nya ada pada database 
+Berikut adalah test nya:
+
+| Scenario      | Merubah data menu order yang menu id nya ada pada database |
+|:--------------|:---------------------------------------------------------------------------------|
+| **Preconditions** | Data order dan menu yang akan digunakan sudah terdaftar. | 
+| **Steps To Execute** | 1. Mengakses Swagger UI pada localhost:8082/orders/index.html<br>2. Klik order-controller<br>3. Klik POST /order/{orderId}/revise<br>4. Klik Try it Out<br>5. Masukkan test data pada request body (lihat bagian Test Data di bawah)<br>6. Klik Execute |
+| **Expected Result** | {<br>  "orderId": 1,<br>  "state": "APPROVED",<br>  "orderTotal": "66.00"<br>} |
+| **Actual Result** | {<br>  "orderId": 1,<br>  "state": "APPROVED",<br>  "orderTotal": "44.00"<br>} |
+| **Test Result** | FAIL |
+| **Screenshot** | ![image](https://github.com/ameliadewi19/ftgo-order-service-test/assets/95133748/27f6fcd5-c5ae-46c6-a4c7-b2fb824ef72f) |  
+
+**Test Data**  
+orderId = 1   
+```json
+{
+  "revisedOrderLineItems": [
+    {
+      "menuItemId": "2",
+      "quantity": 3
+    }
+  ]
 }
 ```
